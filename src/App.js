@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
+import Form from './components/Form/Form';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-          <h1>Skeleton React App</h1>
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="App">
+      <Form />
+    </div>
+  );
+};
 
 export default App;
