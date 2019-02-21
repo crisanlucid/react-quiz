@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import config from './FormConfig';
+import Success from './Success';
 
 const form = () => {
   const [formState, updateFormState] = useState(config);
@@ -29,7 +30,7 @@ const form = () => {
   const UIForm = panelType => {
     switch (panelType) {
       case 'success':
-        return <div>Success Submit</div>;
+        return <Success />;
 
       default:
         return <div>The Form is Broken</div>;
