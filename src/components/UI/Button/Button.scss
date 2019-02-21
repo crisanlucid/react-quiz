@@ -1,0 +1,26 @@
+$name-button: 'Button';
+
+.#{$name-button} {
+    background-color: transparent;
+    border: 1px solid;
+    color: black;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 1rem;
+    margin: 1rem;
+    font-weight: bold;
+
+    &:disabled {
+        color: #ccc;
+        cursor: not-allowed;
+    }
+}
+
+.Success {
+    color: #5C9210;
+}
+
+.Danger {
+    color: #944317;
+}
