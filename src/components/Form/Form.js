@@ -29,6 +29,8 @@ const form = () => {
 
   const UIForm = panelType => {
     switch (panelType) {
+      case 'formFirst':
+        return <div>formFirst</div>;
       case 'success':
         return <Success />;
 

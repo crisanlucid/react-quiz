@@ -2,7 +2,7 @@ export default {
   quizForm: [
     {
       key: '1',
-      typePanel: 'success', //formFirst
+      typePanel: 'formFirst',
       values: {
         quiz_1: {
           label: 'Quiz_1',
