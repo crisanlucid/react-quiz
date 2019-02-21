@@ -1,0 +1,24 @@
+$name-form: 'Form';
+
+$padding: 1rem;
+
+.#{$name-form} {
+
+    &--wrapper {
+        background: #efefef;
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+
+.form {
+    &-group{
+        border-top: 1px solid;
+        padding: $padding;
+        display: flex;
+        justify-content: space-between;
+    }
+}

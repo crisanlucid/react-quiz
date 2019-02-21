@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import config from './FormConfig';
 import Success from './Success';
+import FormFirst from './FormFirst';
 
 const form = () => {
   const [formState, updateFormState] = useState(config);
+  const { quizForm, step } = formState;
 
   const nextStep = () => {
-    const { step } = formState;
-    useState({
+    updateFormState({
       step: step + 1
     });
   };
 
   const prevStep = () => {
-    const { step } = formState;
-    useState({
+    updateFormState({
       step: step - 1
     });
   };
@@ -30,7 +30,15 @@ const form = () => {
   const UIForm = panelType => {
     switch (panelType) {
       case 'formFirst':
-        return <div>formFirst</div>;
+        return (
+          <FormFirst
+            nextStep={nextStep}
+            handleChange={handleChange}
+            values={quizForm}
+          />
+        );
+      case 'formDetails':
+        return true;
       case 'success':
         return <Success />;
 
@@ -40,7 +48,7 @@ const form = () => {
   };
 
   return (
-    <div>
+    <div className="Form--wrapper">
       <h1>Quiz Form</h1>
       {UIForm(panelType)}
     </div>
