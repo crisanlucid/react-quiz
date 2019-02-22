@@ -37,7 +37,9 @@ const form = () => {
             values={formState.quizForm[formState.step].values}
           />
         );
-      case 'formDetails':
+      case 'form':
+        return true;
+      case 'confirm':
         return true;
       case 'success':
         return <Success />;
