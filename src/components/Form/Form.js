@@ -48,7 +48,7 @@ const form = () => {
   };
 
   return (
-    <div className="Form--wrapper">
+    <div className="Form__wrapper">
       <h1>Quiz Form</h1>
       {UIForm(panelType)}
     </div>

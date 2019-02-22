@@ -13,22 +13,24 @@ const formFirst = props => {
   };
 
   return (
-    <div>
-      {Object.values(fieldsForm).map((config, index) => (
-        <div key={index}>
-          <h2>{config.label}</h2>
-          <Input
-            key={index}
-            elementType={config.elementType}
-            elementConfig={config.elementConfig}
-            value={config.value}
-            invalid={!config.valid}
-            shouldValidate={config.validation}
-            touched={config.touched}
-            changed={event => handleChange(event, index)}
-          />
-        </div>
-      ))}
+    <React.Fragment>
+      <div className="Form__wrapper--quiz">
+        {Object.values(fieldsForm).map((config, index) => (
+          <div key={index} className="form-quiz">
+            <h2>{config.label}</h2>
+            <Input
+              key={index}
+              elementType={config.elementType}
+              elementConfig={config.elementConfig}
+              value={config.value}
+              invalid={!config.valid}
+              shouldValidate={config.validation}
+              touched={config.touched}
+              changed={event => handleChange(event, index)}
+            />
+          </div>
+        ))}
+      </div>
       <div className="form-group">
         <Button
           disabled={true}
@@ -43,7 +45,7 @@ const formFirst = props => {
           onClick={continueHandler}
         />
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
