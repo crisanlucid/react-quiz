@@ -8,7 +8,7 @@ const button = props => (
     className={['Button', props.btnType === 'Success' ? 'Success' : ''].join(
       ' '
     )}
-    onClick={props.clicked}
+    onClick={props.onClick}
   >
     {props.label}
   </button>
