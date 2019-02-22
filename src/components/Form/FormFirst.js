@@ -7,6 +7,7 @@ const formFirst = props => {
   const { values, handleChange } = props;
 
   const fieldsForm = values;
+
   const continueHandler = e => {
     e.preventDefault();
     props.nextStep();

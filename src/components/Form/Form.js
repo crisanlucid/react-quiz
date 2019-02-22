@@ -26,7 +26,7 @@ const form = () => {
     console.log('changed');
   };
 
-  const panelType = formState.quizForm[formState.step].typePanel || '';
+  const panelType = quizForm[formState.step].typePanel || '';
 
   console.log('FormType:', panelType);
 
@@ -37,7 +37,7 @@ const form = () => {
           <FormFirst
             nextStep={nextStep}
             handleChange={handleChange}
-            values={formState.quizForm[formState.step].values}
+            values={quizForm[formState.step].values}
           />
         );
       case 'form':
@@ -46,7 +46,7 @@ const form = () => {
             nextStep={nextStep}
             prevStep={prevStep}
             handleChange={handleChange}
-            values={formState.quizForm[formState.step].values}
+            values={quizForm[formState.step].values}
           />
         );
       case 'confirm':

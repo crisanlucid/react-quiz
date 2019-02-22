@@ -36,7 +36,7 @@ const formDetails = props => {
           </div>
         ))}
       </div>
-      <div className="form-group 1">
+      <div className="form-group">
         <Button
           disabled={false}
           label="Back"
