@@ -9,12 +9,14 @@ const form = () => {
 
   const nextStep = () => {
     updateFormState({
+      ...formState,
       step: step + 1
     });
   };
 
   const prevStep = () => {
     updateFormState({
+      ...formState,
       step: step - 1
     });
   };
