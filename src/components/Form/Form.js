@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import config from './FormConfig';
 import Success from './Success';
 import FormFirst from './FormFirst';
@@ -6,7 +6,10 @@ import FormDetails from './FormDetails';
 import FormConfirm from './Confirm';
 
 const form = () => {
-  const [formState, updateFormState] = useState(config);
+  const keyLocalStorage = 'formData';
+  const initialConfig = () =>
+    JSON.parse(window.localStorage.getItem(keyLocalStorage)) || config;
+  const [formState, updateFormState] = useState(initialConfig);
   const { quizForm, step } = formState;
 
   const nextStep = () => {
@@ -45,6 +48,14 @@ const form = () => {
   };
 
   const panelType = quizForm[formState.step].typePanel || '';
+
+  useEffect(() => {
+    window.localStorage.setItem(keyLocalStorage, JSON.stringify(formState));
+
+    if (panelType === 'success') {
+      window.localStorage.clear();
+    }
+  }, [formState]);
 
   const UIForm = panelType => {
     switch (panelType) {
