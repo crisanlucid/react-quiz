@@ -66,3 +66,21 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### Description and architecture used
+
+#### Architecture && Tools
+1. create-react-app + Node-SaSS + Eslint + Visual Studio Code
+
+#### Implementation
+1. Create a dynamic form (based on config file; as many quizzes you like over page)
+2. Create template for multi-steps Form
+    - firstForm (first Panel)
+    - form  (Panel order 2-N ) 
+    - confirm (preview all the data Form , quiz -answer)
+    - success  (show success page)
+3. Use Local Storage in case the page is closed the Data will remain,
+ In case you are in Success Page , all the data collection form are clear
+4. Create minimalist CSS, SCSS files
+5. Create UI components Input, Button, InputField
