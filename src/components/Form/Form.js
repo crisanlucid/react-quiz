@@ -34,7 +34,7 @@ const form = () => {
           <FormFirst
             nextStep={nextStep}
             handleChange={handleChange}
-            values={quizForm}
+            values={formState.quizForm[formState.step].values}
           />
         );
       case 'formDetails':
