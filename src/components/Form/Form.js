@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import config from './FormConfig';
 import Success from './Success';
 import FormFirst from './FormFirst';
+import FormDetails from './FormDetails';
 
 const form = () => {
   const [formState, updateFormState] = useState(config);
@@ -40,7 +41,14 @@ const form = () => {
           />
         );
       case 'form':
-        return true;
+        return (
+          <FormDetails
+            nextStep={nextStep}
+            prevStep={prevStep}
+            handleChange={handleChange}
+            values={formState.quizForm[formState.step].values}
+          />
+        );
       case 'confirm':
         return true;
       case 'success':
