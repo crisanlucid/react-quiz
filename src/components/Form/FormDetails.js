@@ -19,6 +19,7 @@ const formDetails = props => {
 
   return (
     <React.Fragment>
+      <h1>Form Quiz</h1>
       <div className="Form__wrapper--quiz">
         {Object.values(fieldsForm).map((config, index) => (
           <div key={index} className="form-quiz">

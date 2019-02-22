@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../UI/Button/Button';
-import Input from '../UI/Input/Input';
+
 import './Form.scss';
 
 const formConfirm = props => {
@@ -19,6 +19,7 @@ const formConfirm = props => {
 
   return (
     <React.Fragment>
+      <h1>Form Preview Quiz</h1>
       <div className="Form__wrapper--quiz">
         {Object.values(fieldsForm).map((config, index) => (
           <div key={index} className="form-quiz">

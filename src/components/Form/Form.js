@@ -67,12 +67,7 @@ const form = () => {
     }
   };
 
-  return (
-    <div className="Form__wrapper">
-      <h1>Quiz Form</h1>
-      {UIForm(panelType)}
-    </div>
-  );
+  return <div className="Form__wrapper">{UIForm(panelType)}</div>;
 };
 
 export default form;
