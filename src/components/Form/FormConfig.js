@@ -5,7 +5,7 @@ export default {
       typePanel: 'formFirst',
       values: {
         quiz_1: {
-          label: 'Quiz_1',
+          label: 'Question: How is your name?',
           elementType: 'input',
           elementConfig: {
             type: 'text',
@@ -19,7 +19,7 @@ export default {
           touched: false
         },
         quiz_2: {
-          label: 'Quiz_2',
+          label: 'Question: How old are you?',
           elementType: 'input',
           elementConfig: {
             type: 'text',
@@ -33,11 +33,11 @@ export default {
           touched: false
         },
         quiz_3: {
-          label: 'Quiz_3',
+          label: 'Question: Where do you live, what city?',
           elementType: 'input',
           elementConfig: {
             type: 'text',
-            placeholder: 'Full Name'
+            placeholder: 'City'
           },
           value: '',
           validation: {
