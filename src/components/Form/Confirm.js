@@ -1,12 +1,16 @@
 import React from 'react';
 import Button from '../UI/Button/Button';
+import ListItem from '../UI/List/ListItem';
 
 import './Form.scss';
 
 const formConfirm = props => {
   const { values, handleChange } = props;
 
-  const fieldsForm = values;
+  const fieldsForm = values.reduce((acc, { values }) => {
+    return Object.assign(acc, values);
+  }, {});
+
   const continueHandler = e => {
     e.preventDefault();
     props.nextStep();
@@ -23,7 +27,7 @@ const formConfirm = props => {
       <div className="Form__wrapper--quiz">
         {Object.values(fieldsForm).map((config, index) => (
           <div key={index} className="form-quiz">
-            To do:
+            <ListItem primaryText={config.label} secondaryText={config.value} />
           </div>
         ))}
       </div>
