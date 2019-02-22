@@ -9,7 +9,7 @@ export default {
           elementType: 'input',
           elementConfig: {
             type: 'text',
-            placeholder: 'Street'
+            placeholder: 'Full Name'
           },
           value: '',
           validation: {
@@ -23,7 +23,21 @@ export default {
           elementType: 'input',
           elementConfig: {
             type: 'text',
-            placeholder: 'Street'
+            placeholder: 'Age'
+          },
+          value: '',
+          validation: {
+            required: true
+          },
+          valid: false,
+          touched: false
+        },
+        quiz_3: {
+          label: 'Quiz_3',
+          elementType: 'input',
+          elementConfig: {
+            type: 'text',
+            placeholder: 'Full Name'
           },
           value: '',
           validation: {
