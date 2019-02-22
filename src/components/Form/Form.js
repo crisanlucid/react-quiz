@@ -46,8 +46,6 @@ const form = () => {
 
   const panelType = quizForm[formState.step].typePanel || '';
 
-  console.log('FormType:', panelType);
-
   const UIForm = panelType => {
     switch (panelType) {
       case 'formFirst':
