@@ -5,11 +5,17 @@ import ListItem from '../UI/List/ListItem';
 import './Form.scss';
 
 const formConfirm = props => {
-  const { values, handleChange } = props;
+  const { values } = props;
 
-  const fieldsForm = values.reduce((acc, { values }) => {
-    return Object.assign(acc, values);
-  }, {});
+  const listFieldsRawForm = values.reduce((acc, { values }) => {
+    acc.push(Object.values(values));
+    return acc;
+  }, []);
+
+  const fieldsForm = listFieldsRawForm.reduce((acc, curr) => {
+    acc.push(...curr);
+    return acc;
+  }, []);
 
   const continueHandler = e => {
     e.preventDefault();
@@ -25,7 +31,7 @@ const formConfirm = props => {
     <React.Fragment>
       <h1>Form Preview Quiz</h1>
       <div className="Form__wrapper--quiz text left">
-        {Object.values(fieldsForm).map((config, index) => (
+        {fieldsForm.map((config, index) => (
           <div key={index} className="form-quiz">
             <ListItem primaryText={config.label} secondaryText={config.value} />
           </div>
