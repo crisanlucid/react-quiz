@@ -4,13 +4,17 @@ $padding: 1rem;
 
 .#{$name-form} {
 
-    &--wrapper {
+    &__wrapper {
         background: #efefef;
         width: 80%;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
+
+        &--quiz {
+            padding: $padding;
+        }
     }
 }
 
@@ -20,5 +24,10 @@ $padding: 1rem;
         padding: $padding;
         display: flex;
         justify-content: space-between;
+    }
+
+
+    &-quiz {
+        padding: $padding/2;
     }
 }
