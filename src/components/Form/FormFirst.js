@@ -6,29 +6,35 @@ import './Form.scss';
 const formFirst = props => {
   const { values, handleChange } = props;
 
-  const fieldsForm = values;
-
   const continueHandler = e => {
     e.preventDefault();
     props.nextStep();
   };
 
+  const formElementsArray = [];
+  for (let key in values) {
+    formElementsArray.push({
+      id: key,
+      config: values[key]
+    });
+  }
+
   return (
     <React.Fragment>
       <h1>Form Quiz</h1>
       <div className="Form__wrapper--quiz">
-        {Object.values(fieldsForm).map((config, index) => (
-          <div key={index} className="form-quiz">
-            <h2>{config.label}</h2>
+        {formElementsArray.map(formElement => (
+          <div key={formElement.id} className="form-quiz">
+            <h2>{formElement.config.label}</h2>
             <Input
-              key={index}
-              elementType={config.elementType}
-              elementConfig={config.elementConfig}
-              value={config.value}
-              invalid={!config.valid}
-              shouldValidate={config.validation}
-              touched={config.touched}
-              changed={event => handleChange(event, index)}
+              key={formElement.id}
+              elementType={formElement.config.elementType}
+              elementConfig={formElement.config.elementConfig}
+              value={formElement.config.value}
+              invalid={!formElement.config.valid}
+              shouldValidate={formElement.config.validation}
+              touched={formElement.config.touched}
+              changed={event => handleChange(event, formElement.id)}
             />
           </div>
         ))}

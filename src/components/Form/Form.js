@@ -23,8 +23,25 @@ const form = () => {
     });
   };
 
-  const handleChange = input => e => {
-    console.log('changed');
+  const handleChange = (event, inputIdentifier) => {
+    const updatedForm = {
+      ...formState
+    };
+    const updatedFormElement = {
+      ...quizForm[formState.step]['values'][inputIdentifier]
+    };
+    updatedFormElement.value = event.target.value;
+    updatedFormElement.valid = true; //TO DO: implement validation
+    updatedFormElement.touched = true;
+    updatedForm['quizForm'][formState.step]['values'][
+      inputIdentifier
+    ] = updatedFormElement;
+
+    updateFormState({
+      ...updatedForm,
+      step: step,
+      formIsValid: true
+    });
   };
 
   const panelType = quizForm[formState.step].typePanel || '';
