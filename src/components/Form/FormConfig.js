@@ -89,7 +89,8 @@ export default {
     },
     {
       key: '4',
-      typePanel: 'success'
+      typePanel: 'success',
+      values: {}
     }
   ],
   step: 0
