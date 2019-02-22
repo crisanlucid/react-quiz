@@ -24,7 +24,7 @@ const formConfirm = props => {
   return (
     <React.Fragment>
       <h1>Form Preview Quiz</h1>
-      <div className="Form__wrapper--quiz">
+      <div className="Form__wrapper--quiz text left">
         {Object.values(fieldsForm).map((config, index) => (
           <div key={index} className="form-quiz">
             <ListItem primaryText={config.label} secondaryText={config.value} />
