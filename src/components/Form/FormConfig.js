@@ -5,7 +5,7 @@ export default {
       typePanel: 'formFirst',
       values: {
         quiz_1: {
-          label: 'Question: How is your name?',
+          label: 'Question: What is your name?',
           elementType: 'input',
           elementConfig: {
             type: 'text',
