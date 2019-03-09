@@ -5,27 +5,7 @@ export default {
       typePanel: 'formFirst',
       values: {
         quiz_1: {
-          label: 'Question: How many developers has the department IT?',
-          elementType: 'input',
-          elementConfig: {
-            type: 'radio',
-            name: 'form[it]',
-            options: [
-              { label: '< 10 devs', value: '0' },
-              { label: '> 15 devs', value: '1' },
-              { label: ' ~ 5 devs', value: '-1' }
-            ],
-            default: '-1'
-          },
-          value: '',
-          validation: {
-            required: true
-          },
-          valid: false,
-          touched: false
-        },
-        quiz_2: {
-          label: 'Question: What type of company is it?',
+          label: 'What type of company is it?',
           elementType: 'input',
           elementConfig: {
             type: 'radio',
@@ -44,12 +24,57 @@ export default {
           valid: false,
           touched: false
         },
-        quiz_3: {
-          label: 'Question: Where do you live, what city?',
+        quiz_2: {
+          label: 'Does the company use React technology?',
           elementType: 'input',
           elementConfig: {
-            type: 'text',
-            placeholder: 'City'
+            type: 'radio',
+            name: 'form[tech]',
+            options: [
+              { label: 'yes', value: '1' },
+              { label: 'no', value: '0' }
+            ],
+            default: '0'
+          },
+          value: '',
+          validation: {
+            required: true
+          },
+          valid: false,
+          touched: false
+        },
+        quiz_3: {
+          label: 'How many developers are in the IT department?',
+          elementType: 'input',
+          elementConfig: {
+            type: 'radio',
+            name: 'form[it]',
+            options: [
+              { label: '< 10 devs', value: '1' },
+              { label: '> 15 devs', value: '2' },
+              { label: ' ~ 5 devs', value: '0' }
+            ],
+            default: '0'
+          },
+          value: '',
+          validation: {
+            required: true
+          },
+          valid: false,
+          touched: false
+        },
+        quiz_4: {
+          label: 'Does the company had profit over last years?',
+          elementType: 'input',
+          elementConfig: {
+            type: 'radio',
+            name: 'form[profit]',
+            options: [
+              { label: '<1mil euro', value: '0' },
+              { label: '<5mil euro', value: '1' },
+              { label: '>5mil euro', value: '2' }
+            ],
+            default: '0'
           },
           value: '',
           validation: {
@@ -64,12 +89,19 @@ export default {
       key: '2',
       typePanel: 'form',
       values: {
-        quiz_3: {
-          label: 'Quiz_3',
+        quiz_5: {
+          label: 'How often need to work overtime?',
           elementType: 'input',
           elementConfig: {
-            type: 'text',
-            placeholder: 'Street'
+            type: 'radio',
+            name: 'form[work]',
+            options: [
+              { label: 'not at all', value: '2' },
+              { label: 'sometimes', value: '1' },
+              { label: 'often', value: '0' },
+              { label: 'based on Deadline', value: '-1' }
+            ],
+            default: '1'
           },
           value: '',
           validation: {
@@ -78,12 +110,20 @@ export default {
           valid: false,
           touched: false
         },
-        quiz_4: {
-          label: 'Quiz_4',
+        quiz_6: {
+          label:
+            'What is your maximum budget to hire a developer with my experience?',
           elementType: 'input',
           elementConfig: {
-            type: 'text',
-            placeholder: 'Street'
+            type: 'radio',
+            name: 'form[budget]',
+            options: [
+              { label: '60k euro', value: '-1' },
+              { label: '65k euro', value: '0' },
+              { label: '70k euro', value: '1' },
+              { label: '+75k euro', value: '2' }
+            ],
+            default: '-1'
           },
           value: '',
           validation: {
