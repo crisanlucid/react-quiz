@@ -5,11 +5,17 @@ export default {
       typePanel: 'formFirst',
       values: {
         quiz_1: {
-          label: 'Question: What is your name?',
+          label: 'Question: How many developers has the department IT?',
           elementType: 'input',
           elementConfig: {
-            type: 'text',
-            placeholder: 'Full Name'
+            type: 'radio',
+            name: 'form[it]',
+            options: [
+              { label: '< 10 devs', value: '0' },
+              { label: '> 15 devs', value: '1' },
+              { label: ' ~ 5 devs', value: '-1' }
+            ],
+            default: '-1'
           },
           value: '',
           validation: {
@@ -19,11 +25,17 @@ export default {
           touched: false
         },
         quiz_2: {
-          label: 'Question: How old are you?',
+          label: 'Question: What type of company is it?',
           elementType: 'input',
           elementConfig: {
-            type: 'text',
-            placeholder: 'Age'
+            type: 'radio',
+            name: 'form[company]',
+            options: [
+              { label: 'start-up', value: '0' },
+              { label: 'corporate', value: '2' },
+              { label: 'spin-off', value: '1' }
+            ],
+            default: '1'
           },
           value: '',
           validation: {

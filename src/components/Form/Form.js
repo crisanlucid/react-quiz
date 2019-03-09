@@ -33,7 +33,22 @@ const form = () => {
     const updatedFormElement = {
       ...quizForm[formState.step]['values'][inputIdentifier]
     };
-    updatedFormElement.value = event.target.value;
+
+    if ('radio' === updatedFormElement.elementConfig.type) {
+      updatedFormElement.elementConfig.default = event.target.value;
+      updatedFormElement.value = updatedFormElement.elementConfig.options.reduce(
+        (acc, { label, value }) => {
+          if (value === event.target.value) {
+            acc = label;
+          }
+          return acc;
+        },
+        ''
+      );
+    } else {
+      updatedFormElement.value = event.target.value;
+    }
+
     updatedFormElement.valid = true; //TO DO: implement validation
     updatedFormElement.touched = true;
     updatedForm['quizForm'][formState.step]['values'][
