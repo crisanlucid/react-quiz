@@ -15,7 +15,7 @@ export default {
               { label: 'corporate', value: '2' },
               { label: 'spin-off', value: '1' }
             ],
-            default: '1'
+            defaultOption: '1'
           },
           value: '',
           validation: {
@@ -34,7 +34,7 @@ export default {
               { label: 'yes', value: '1' },
               { label: 'no', value: '0' }
             ],
-            default: '0'
+            defaultOption: '0'
           },
           value: '',
           validation: {
@@ -54,7 +54,7 @@ export default {
               { label: '> 15 devs', value: '2' },
               { label: ' ~ 5 devs', value: '0' }
             ],
-            default: '0'
+            defaultOption: '0'
           },
           value: '',
           validation: {
@@ -74,7 +74,7 @@ export default {
               { label: '<5mil euro', value: '1' },
               { label: '>5mil euro', value: '2' }
             ],
-            default: '0'
+            defaultOption: '0'
           },
           value: '',
           validation: {
@@ -101,7 +101,7 @@ export default {
               { label: 'often', value: '0' },
               { label: 'based on Deadline', value: '-1' }
             ],
-            default: '1'
+            defaultOption: '1'
           },
           value: '',
           validation: {
@@ -123,7 +123,7 @@ export default {
               { label: '70k euro', value: '1' },
               { label: '+75k euro', value: '2' }
             ],
-            default: '-1'
+            defaultOption: '-1'
           },
           value: '',
           validation: {

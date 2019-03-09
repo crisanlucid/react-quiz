@@ -13,16 +13,49 @@ const form = () => {
   const { quizForm, step } = formState;
 
   const nextStep = () => {
+    const currStep = step + 1;
     updateFormState({
       ...formState,
-      step: step + 1
+      step: currStep
     });
+
+    initDefaultCheckedInput(quizForm[formState.step]['values'], step, currStep);
   };
 
   const prevStep = () => {
+    const currStep = step - 1;
     updateFormState({
       ...formState,
-      step: step - 1
+      step: currStep
+    });
+
+    initDefaultCheckedInput(quizForm[formState.step]['values'], step, currStep);
+  };
+
+  const initDefaultCheckedInput = (currentFormPage, step, currStep) => {
+    let updateFormPage = { ...currentFormPage };
+    const updatedForm = {
+      ...formState
+    };
+
+    for (let key in updateFormPage) {
+      if ('text' !== updateFormPage[key]['elementConfig']['type']) {
+        updateFormPage[key]['value'] = updateFormPage[
+          key
+        ].elementConfig.options.reduce((acc, { label, value }) => {
+          if (value === updateFormPage[key].elementConfig.defaultOption) {
+            acc = label;
+          }
+          return acc;
+        }, '');
+      }
+    }
+    updatedForm['quizForm'][step]['values'] = updateFormPage;
+
+    updateFormState({
+      ...updatedForm,
+      step: currStep,
+      formIsValid: true
     });
   };
 
@@ -46,7 +79,7 @@ const form = () => {
         ''
       );
     } else {
-      updatedFormElement.value = event.target.value;
+      updatedFormElement.defaultOption = event.target.value;
     }
 
     updatedFormElement.valid = true; //TO DO: implement validation
