@@ -64,7 +64,7 @@ export default {
           touched: false
         },
         quiz_4: {
-          label: 'Does the company had profit over last years?',
+          label: 'Did the company have profit over last years?',
           elementType: 'input',
           elementConfig: {
             type: 'radio',
@@ -123,7 +123,23 @@ export default {
               { label: '70k euro', value: '1' },
               { label: '+75k euro', value: '2' }
             ],
-            defaultOption: '-1'
+            defaultOption: '2'
+          },
+          value: '',
+          validation: {
+            required: true
+          },
+          valid: false,
+          touched: false
+        },
+        quiz_7: {
+          label:
+            'How do you keep developers happy after one year in the company?',
+          elementType: 'input',
+          elementConfig: {
+            type: 'text',
+            name: 'happy',
+            placeholder: 'your benefits'
           },
           value: '',
           validation: {
