@@ -17,8 +17,8 @@ const input = props => {
                 <input
                   type={props.elementConfig.type}
                   name={props.elementConfig.name}
-                  value={option.defaultOption}
-                  checked={props.selectedOption === option.defaultOption}
+                  value={option.value}
+                  checked={props.selectedOption === option.value}
                   onChange={props.changed}
                   className="form-check-radio"
                 />

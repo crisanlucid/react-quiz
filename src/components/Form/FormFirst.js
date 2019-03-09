@@ -34,7 +34,7 @@ const formFirst = props => {
               invalid={!formElement.config.valid}
               shouldValidate={formElement.config.validation}
               touched={formElement.config.touched}
-              selectedOption={formElement.config.elementConfig.default}
+              selectedOption={formElement.config.elementConfig.defaultOption}
               changed={event => handleChange(event, formElement.id)}
             />
           </div>

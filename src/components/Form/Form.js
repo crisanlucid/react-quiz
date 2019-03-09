@@ -68,10 +68,11 @@ const form = () => {
     };
 
     if ('radio' === updatedFormElement.elementConfig.type) {
-      updatedFormElement.elementConfig.default = event.target.value;
+      updatedFormElement.elementConfig.defaultOption =
+        event.currentTarget.value;
       updatedFormElement.value = updatedFormElement.elementConfig.options.reduce(
         (acc, { label, value }) => {
-          if (value === event.target.value) {
+          if (value === event.currentTarget.value) {
             acc = label;
           }
           return acc;
@@ -79,7 +80,7 @@ const form = () => {
         ''
       );
     } else {
-      updatedFormElement.defaultOption = event.target.value;
+      updatedFormElement.value = event.target.value;
     }
 
     updatedFormElement.valid = true; //TO DO: implement validation
