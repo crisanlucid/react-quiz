@@ -96,7 +96,32 @@ const form = () => {
     });
   };
 
-  const panelType = quizForm[formState.step].typePanel || '';
+  let panelType = quizForm[formState.step].typePanel || '';
+
+  const calcAnswersTOTAL = updatedForm => {
+    const listAnswers = { ...updatedForm };
+
+    const listFieldsRawForm = Object.values(listAnswers).reduce(
+      (acc, { values }) => {
+        acc.push(Object.values(values));
+        return acc;
+      },
+      []
+    );
+
+    const fieldsForm = listFieldsRawForm.reduce((acc, curr) => {
+      acc.push(...curr);
+      return acc;
+    }, []);
+
+    const sumTOTAL = fieldsForm.reduce((acc, { elementConfig }) => {
+      const answer_no = parseInt(elementConfig.defaultOption) || 0;
+      acc = acc + answer_no;
+      return acc;
+    }, 0);
+
+    return sumTOTAL;
+  };
 
   useEffect(() => {
     window.localStorage.setItem(keyLocalStorage, JSON.stringify(formState));
@@ -135,8 +160,15 @@ const form = () => {
           />
         );
       case 'success':
-        return <Success />;
+        let primaryMessage = 'Game Over';
+        const points = calcAnswersTOTAL(quizForm);
 
+        if (points >= 6) {
+          primaryMessage = 'Let`s schedule a phone-call!';
+        }
+        console.info('total points:' + points);
+
+        return <Success message={primaryMessage} />;
       default:
         return <div>The Form is Broken</div>;
     }
