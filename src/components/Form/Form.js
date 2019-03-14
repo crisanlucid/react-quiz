@@ -160,15 +160,18 @@ const form = () => {
           />
         );
       case 'success':
-        let primaryMessage = 'Game Over';
+        let primaryMessage =
+          'Thank you for your time and consideration; best wishes in your continued success, and I hope our paths cross again in the future';
         const points = calcAnswersTOTAL(quizForm);
+        let meetingLink = null;
 
         if (points >= 6) {
           primaryMessage = 'Let`s schedule a phone-call!';
+          meetingLink = 'https://calendly.com/lucian-crisan';
         }
         console.info('total points:' + points);
 
-        return <Success message={primaryMessage} />;
+        return <Success message={primaryMessage} link={meetingLink} />;
       default:
         return <div>The Form is Broken</div>;
     }
