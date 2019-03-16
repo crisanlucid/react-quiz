@@ -1,8 +1,11 @@
 import React from 'react';
 
+import './Input.scss';
+
 const input = props => {
   let inputElement = null;
-  const inputClasses = [];
+  const inputClasses = ['m-checkbox'];
+  const labelClassName = 'm-checkbox__label';
 
   switch (props.elementType) {
     case 'input':
@@ -13,15 +16,19 @@ const input = props => {
               className={inputClasses.join(' ')}
               key={`${props.elementConfig.name}-${index}`}
             >
-              <label>
-                <input
-                  type={props.elementConfig.type}
-                  name={props.elementConfig.name}
-                  value={option.value}
-                  checked={props.selectedOption === option.value}
-                  onChange={props.changed}
-                  className="form-check-radio"
-                />
+              <input
+                id={`${props.elementConfig.name}-${option.value}`}
+                type={props.elementConfig.type}
+                name={props.elementConfig.name}
+                value={option.value}
+                checked={props.selectedOption === option.value}
+                onChange={props.changed}
+                className="m-checkbox__input"
+              />
+              <label
+                className={labelClassName}
+                htmlFor={`${props.elementConfig.name}-${option.value}`}
+              >
                 {option.label}
               </label>
             </div>
