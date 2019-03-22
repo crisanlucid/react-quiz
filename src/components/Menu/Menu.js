@@ -1,18 +1,37 @@
 import React from 'react';
 
 export default class menu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menus: []
+    };
+  }
+  componentDidMount() {
+    fetch('./menu.json')
+      .then(response => {
+        return response.json();
+      })
+      .catch(() => console.log('something went wrong'))
+      .then(menus => {
+        this.setState({
+          menus: menus
+        });
+      });
+  }
+
   render() {
-    let menus = ['Home', 'About', 'Services', 'Portfolio', 'Contact us'];
     return (
       <div className="Menu__wrapper">
         <h1>Menus</h1>
-        {menus.map((linkName, i) => {
-          return (
-            <div key={i}>
-              <Link label={linkName} />
-            </div>
-          );
-        })}
+        {this.state.menus &&
+          this.state.menus.map((linkName, i) => {
+            return (
+              <div key={i}>
+                <Link label={linkName} />
+              </div>
+            );
+          })}
       </div>
     );
   }
