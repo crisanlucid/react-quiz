@@ -1,4 +1,5 @@
 import React from 'react';
+import Menus from './menus.json';
 
 export default class menu extends React.Component {
   constructor(props) {
@@ -8,16 +9,9 @@ export default class menu extends React.Component {
     };
   }
   componentDidMount() {
-    fetch('./menu.json')
-      .then(response => {
-        return response.json();
-      })
-      .catch(() => console.log('something went wrong'))
-      .then(menus => {
-        this.setState({
-          menus: menus
-        });
-      });
+    this.setState({
+      menus: Menus
+    });
   }
 
   render() {
