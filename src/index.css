@@ -12,3 +12,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.Menu__wrapper {
+    min-height: 400px;
+    min-width: 400px;
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 5px;
+    box-shadow: 5px 55px 50px -20px #b6b6b6; 
+}
+
+
+.Menu__list {
+  background-color: #46ACC2;
+  display: flex;
+  padding: 16px;
+  font-family: sans-serif;
+  color: white;
+}
+
+.Menu__item {
+  display: flex;
+}
+
+.Link__wrapper {
+  padding-right: 8px;
+}
+
+.Link__wrapper a {
+  color: white;
+  text-decoration: none;
+}
+.Link__wrapper a:hover {
+  text-decoration: underline;
+}

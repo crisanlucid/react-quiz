@@ -18,14 +18,17 @@ export default class menu extends React.Component {
     return (
       <div className="Menu__wrapper">
         <h1>Menus</h1>
-        {this.state.menus &&
-          this.state.menus.map((linkName, i) => {
-            return (
-              <div key={i}>
-                <Link label={linkName} />
-              </div>
-            );
-          })}
+        {this.state.menus && (
+          <nav className="Menu__list">
+            {this.state.menus.map((linkName, i) => {
+              return (
+                <div key={i} className="Menu__item">
+                  <Link label={linkName} />
+                </div>
+              );
+            })}
+          </nav>
+        )}
       </div>
     );
   }
