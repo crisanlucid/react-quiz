@@ -1,4 +1,4 @@
-# Quiz App React
+# Quiz/ Multi-Step Form App React
 ## Description and architecture used
 
 Quiz App - multi step form based on configuration JSON where can be
